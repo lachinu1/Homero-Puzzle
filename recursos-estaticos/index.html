@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es"> 
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+
+
+<body> 
+    <h1>Homero Puzzle</h1>
+
+    <form action="/juego.html" method="POST" enctype="multipart/form-data">
+
+        <fieldset class="usuario">
+            <label for="nombre">Ingresa un nombre de usuario</label>
+            <input name="nombre" id="nombre" required>
+        </fieldset>
+
+        <fieldset class="img">
+            <label for="avatar">Selecciona tu Avatar</label>
+            <ul clarr="avatar" name="avatar" required>
+                <li>
+                    <a href="#">
+                        <img src="imagenes/avatar-homero.jpg" alt="Homero" width="50" height="50">
+                        <span class="text-item"></span>
+                        <span class="down-item"></span>
+                    </a>
+                </li>        
+
+
+
+
+
+                    </a>
+
+
+
+                </li>
+                
+            
+        </fieldset>
+        <button class="boton" type="submit">Aceptar</button>
+    </form>
+
+     
+
+    <audio id="saludo" src="sonidos/Saludo.wav" preload="auto"></audio>
+</body>
+
+</html>

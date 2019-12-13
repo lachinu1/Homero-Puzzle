@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es"> 
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+
+
+<body> 
+    <h1>Homero Puzzle</h1>
+
+    <form 
+    action="./juego.html" 
+    method="GET" 
+    enctype="multipart/form-data" 
+    class="form"
+>
+
+        <fieldset class="usuario">
+            <label for="nombre">Ingresa un nombre de usuario</label>
+            <input name="nombre" id="nombre" required>
+        </fieldset>
+
+        <fieldset class="img" required>
+            <label for="avatar">Selecciona tu Avatar</label>
+        
+        <div class="galeria">
+              
+            <label>  
+                <input type="radio" name="test" value="Homero" id="avatar" checked>
+                <img src="imagenes/homero2.png" title="Homero">
+            </label> 
+            
+            <label> 
+                <input type="radio" name="test" value="Marge" id="avatar">
+                <img src="imagenes/marge.png" title="Marge">
+
+            </label> 
+            <label> 
+                    <input type="radio" name="test" value="Bart" id="avatar">
+                <img src="imagenes/bart.png" title="Bart">
+            </label>   
+            <label> 
+                    <input type="radio" name="test" value="Lisa" id="avatar">
+                    <img src="imagenes/lisa.png" title="Lisa">
+            </label>
+            <label>
+                    <input type="radio" name="test" value="Maggie" id="avatar">
+                    <img src="imagenes/maggie.png" title="Maggie">
+            </label>
+        </div>
+    
+        </fieldset>
+        <button class="boton" type="submit">INICIO</button>
+    </form>
+
+     
+
+    <audio id="saludo" src="sonidos/Saludo.wav" preload="auto"></audio>
+
+
+
+    <script type="text/javascript"></script>
+
+    <script> 
+        async function guardar_usuarios(e){
+            e.preventDefault()
+
+            var nombre = e.target.a('nombre')
+            var respuesta = await fetch('/api/usuarios') 
+            var usuarios = await respuesta.json()
+            console.log(usuarios)
+        }
+    </script>
+
+    <script>
+            document.getElementById('saludo').play();
+    </script>
+
+<script>
+       
+        function audio(e) {
+            var reproducir = new_audio();
+            reproducir.src = e; 
+            reproducir.play();
+        }
+ 
+     </script>
+
+</body>
+
+</html>

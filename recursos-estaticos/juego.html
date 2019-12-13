@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es"> 
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="descripcion" content="Esto es un juego web">
+    <meta name="author" content="Chinu">
+    <title>Homero Puzzle</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body> 
+
+    <div class= "cotenedor"> 
+
+        <div class="documento" > 
+            <div class="scrollbar" id="style-3">
+                <div class="force-overflow"></div>
+        </div>
+
+    <header>  
+        <div class="rompecabezas">
+            <img class="puzzle" src="imagenes/puzzle.png">
+            <h1>Homero Puzzle</h1>
+        </div>
+    </header>
+
+        <div class="parrafo" > 
+            <p>Completa el rompecabezas arrastrando las piezas sobre la imagen de Homero.</p>
+            <p>Supera tu tiempo. Presiona Start para comenzar.</p>
+        </div>
+
+        <div class="mensaje"><b>Córrele viejo!</b></div>
+
+        <form class="botones"> 
+            <input type="button" id="boton" onclick="StartTime()" value="Start" >
+
+         <div id="cronometro">
+                <p id="texto">Tiempo</p>
+                <p id="tiempo"><span id="minutos">00</span>:<span id="segundos">00</span></p>
+        </div>
+                 
+    </div>
+        
+         </form> 
+
+        <svg width="600" height="600" id="entorno">
+            <g id="fondo"><image xlink:href="imagenes/homero.png" width="400" height="400" x="200" y="100"></g>
+        <g class="padre" id="0"><image xlink:href="imagenes/p1.png" class="movil"></g>
+        <g class="padre" id="1"><image xlink:href="imagenes/p2.png" class="movil"></g>
+        <g class="padre" id="2"><image xlink:href="imagenes/p3.png" class="movil"></g>
+        <g class="padre" id="3"><image xlink:href="imagenes/p4.png" class="movil"></g>
+        <g class="padre" id="4"><image xlink:href="imagenes/p5.png" class="movil"></g>
+        <g class="padre" id="5"><image xlink:href="imagenes/p6.png" class="movil"></g>
+        <g class="padre" id="6"><image xlink:href="imagenes/p7.png" class="movil"></g>
+        <g class="padre" id="7"><image xlink:href="imagenes/p8.png" class="movil"></g>
+        <g class="padre" id="8"><image xlink:href="imagenes/p9.png" class="movil"></g>
+    </svg>
+
+        <div class="donaMovil" >
+            <img id="donaMovil" class="estiloDona" src="imagenes/dona.png" weight="200" height="200"> 
+        </div>
+
+    <footer class="footer">
+            <div class="pie">
+                <p id="pie-de-pagina"><b>Buenos Aires, Argentina 2019 - Creado por @lachinu10 para ComunidadIT</b></p>
+                <img class="lata" src="imagenes/duff.png"> 
+            </div>
+    </footer>        
+
+        <div>
+            <audio class="musica" src="sonidos/Intro.mp3" autoplay="true" volume="100"> 
+        </div>    
+    
+
+        <audio id="saludo" src="sonidos/Saludo.wav" preload="auto"></audio>
+        <audio id="win" src="sonidos/Homero.mp3"></audio>
+
+        
+
+    
+        <script type="text/javascript" src="js/main.js" ></script>
+        <script src="js/dimensiones.js"></script>
+        <script src="js/autoplay.js"></script>
+        <script src="js/cronometro.js"></script>
+
+
+        
+        <script type="text/javascript">
+
+         var el = document.getElementById("donaMovil");
+                if (el.addEventListener){
+                    el.addEventListener("mousedown", mousePulsado, false);
+                    el.addEventListener("mouseup", mouseSoltado, false);
+                    document.addEventListener("mousemove", mouseMovido, false);
+                } else { //Para IE
+                    el.attachEvent('onmousedown', mousePulsado);
+                    el.attachEvent('onmouseup', mouseSoltado);
+                    document.attachEvent('onmousemove', mouseMovido);
+                }                  
+        
+        </script>
+       
+
+
+        <script>
+            document.getElementById('saludo').play();
+        </script>
+
+    <script>
+       
+       function audio(e) {
+           var reproducir = new_audio();
+           reproducir.src = e; 
+           reproducir.play();
+       }
+
+    </script>
+
+        </div> 
+
+    </div>
+
+</body>
+
+
+</html>
