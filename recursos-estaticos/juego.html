@@ -32,6 +32,9 @@
         </div>
 
         <div class="mensaje"><b>Córrele viejo!</b></div>
+        
+    <div class="contenedorTodo" > 
+        
 
         <form class="botones"> 
             <input type="button" id="boton" onclick="StartTime()" value="Start" >
@@ -41,11 +44,9 @@
                 <p id="tiempo"><span id="minutos">00</span>:<span id="segundos">00</span></p>
         </div>
                  
-    </div>
-        
-         </form> 
+        </form> 
 
-        <svg width="600" height="600" id="entorno">
+        <svg width="600" height="600" id="entorno"> 
             <g id="fondo"><image xlink:href="imagenes/homero.png" width="400" height="400" x="200" y="100"></g>
         <g class="padre" id="0"><image xlink:href="imagenes/p1.png" class="movil"></g>
         <g class="padre" id="1"><image xlink:href="imagenes/p2.png" class="movil"></g>
@@ -57,6 +58,8 @@
         <g class="padre" id="7"><image xlink:href="imagenes/p8.png" class="movil"></g>
         <g class="padre" id="8"><image xlink:href="imagenes/p9.png" class="movil"></g>
     </svg>
+
+    </div>
 
         <div class="donaMovil" >
             <img id="donaMovil" class="estiloDona" src="imagenes/dona.png" weight="200" height="200"> 
@@ -74,7 +77,6 @@
         </div>    
     
 
-        <audio id="saludo" src="sonidos/Saludo.wav" preload="auto"></audio>
         <audio id="win" src="sonidos/Homero.mp3"></audio>
 
         
@@ -87,8 +89,8 @@
 
 
         
-        <script type="text/javascript">
-
+        <script type="text/javascript">   //movimiento de la Dona
+ 
          var el = document.getElementById("donaMovil");
                 if (el.addEventListener){
                     el.addEventListener("mousedown", mousePulsado, false);
@@ -101,20 +103,7 @@
                 }                  
         
         </script>
-       
 
-
-        <script>
-            document.getElementById('saludo').play();
-        </script>
-
-    <script>
-       
-       function audio(e) {
-           var reproducir = new_audio();
-           reproducir.src = e; 
-           reproducir.play();
-       }
 
     </script>
 

@@ -1,42 +1,63 @@
-var express = require('express');
-var bodyParser = require('body-parser');
-var multer = require('multer')
+var express = require("express");
+var bodyParser = require("body-parser");
+var ClienteMongo = require("mongodb").MongoClient;
 
-var app = express()
-var upload = multer({dest: 'recursos-estaticos/img'})
-var puerto = process.env.PORT || 3000 
+var url = 'mongodb+srv://chinu:tltar303@cluster0-c3wlg.mongodb.net/test?retryWrites=true&w=majority';  
 
-var bd_usuarios = []
-var bd_avatar = []
+var nombre_db = 'Chinu';
 
-app.use(bodyParser.urlencoded ({extended: false}))
-app.use(bodyParser.json())
-app.use(express.static('./recursos-estaticos'))
+// Variable donde guardamos la conexión a MongoDB Atlas
+var db;
 
-app.get('/api/usuarios', function (_, respuesta) {
-  respuesta.json({usuarios: bd_usuarios, avatar: bd_avatar})
-})
-
-app.get('/api/usuarios/:nombre', function (consulta, respuesta){
-  var nombre = consulta.params
-  var usuarios = bd_usuarios.find(function (p){
-    return p.nombre.toLowerCase()== nombre.toLowerCase()
-  })
-  if (!usuarios) {
-    respuesta.status(404).json({mensaje: 'Recurso no encontrado'})
+/* El tercer argumento de connect() es la funcion asincrónica que intenta
+conectarse al servidor de Atlas, puede retornar "err" si hay algun problema
+o "cliente" si se pudo conectar.
+*/
+ClienteMongo.connect(url, { useUnifiedTopology: true }, async function(
+  err,
+  cliente
+) {
+  // Si hay un error, hace console.log y cierra el proceso
+  if (err) {
+    console.log("Hubo un error:" + JSON.stringify(err));
+    process.exit(1);
   }
-  respuesta.json(usuarios)
-})
 
-app.post('/api/usuarios', upload.single('avatar'), function (consulta, respuesta) {
-  bd_usuarios.push({
-    nombre: consulta.body.nombre,
-    avatar: '/img' + consulta.name.filename
-  }) 
-})
+  /* Si la conexión se estableció hace console.log y la guarda
+  en la variable "db" para que la podamos usar después.
+  */
+  console.log("Conexión a Mongo exitosa!");
+  db = cliente.db(nombre_db);
+});
 
-app.listen(puerto, function () {
-  console.log('Servidor escuchando conexion en puerto ' + puerto)
-})
+var app = express();
 
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(express.static("./recursos-estaticos"));
 
+/* Este endpoint recibe consultas solo con metodo POST, es el que
+vamos a usar para insertar usuarios a MongoDB
+*/
+app.post("./juego" , async function(consulta, respuesta) {
+  await db.collection("usuarios").insertOne({
+    nombre: consulta.body.usuario,
+    avatar: consulta.body.avatar,
+    tiempo: consulta.body.tiempo
+  });
+
+  respuesta.send("usuario ingresado");
+});
+
+app.get("/tabla", async function(consulta, respuesta) {
+  var usuarios = await db
+    .collection("usuarios")
+    .find()
+    .toArray();
+
+  respuesta.send(usuarios);
+});
+
+app.listen(3000, function() {
+  console.log("Servidor corriendo en puerto 3000");
+});

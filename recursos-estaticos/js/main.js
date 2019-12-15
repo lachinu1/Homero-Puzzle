@@ -88,8 +88,7 @@ function iman(){
 }
 			
 var win = document.getElementById("win");
-var tiempo = cronometro
-var nombre = usuario
+
 
 function testing() {
 	var bien_ubicada = 0;
@@ -105,16 +104,17 @@ function testing() {
 	if(bien_ubicada == 9){
 		win.play();
 		clearInterval(cronometro)
+		alert("¡Felicitaciones babos@! Terminaste el juego")
 		//obtener usuario y cronometro
 		//mandar al servidor a traves de un POST 
-		async function guardarScore(tiempo, nombre) {
-			var respuesta = await fetch('/api/puntaje', {
-				method: 'POST',
+		async function guardarTiempos(tiempo, usuarios) {
+			var respuesta = await fetch('/api/puntajes', {
+				method: 'GET',
 				headers: {
 					'Content-Type': 'application/json'
 				},
 				body: JSON.stringify({
-					nombre: nombre,
+					usuarios: usuarios,
 					tiempo: tiempo,
 				})
 			})

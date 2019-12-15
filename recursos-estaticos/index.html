@@ -10,7 +10,13 @@
 <body> 
     <h1>Homero Puzzle</h1>
 
-    <form action="/juego.html" method="POST" enctype="multipart/form-data">
+    <form 
+    action="./juego.html" 
+    method="GET" 
+    enctype="multipart/form-data" 
+    class="form"
+    id= "formulario"
+>
 
         <fieldset class="usuario">
             <label for="nombre">Ingresa un nombre de usuario</label>
@@ -19,33 +25,48 @@
 
         <fieldset class="img">
             <label for="avatar">Selecciona tu Avatar</label>
-            <ul clarr="avatar" name="avatar" required>
-                <li>
-                    <a href="#">
-                        <img src="imagenes/avatar-homero.jpg" alt="Homero" width="50" height="50">
-                        <span class="text-item"></span>
-                        <span class="down-item"></span>
-                    </a>
-                </li>        
-
-
-
-
-
-                    </a>
-
-
-
-                </li>
-                
+        
+        <div class="galeria">
+              
+            <label>  
+                <input type="radio" name="test" value="Homero" id="avatar" checked>
+                <img src="imagenes/homero2.png" title="Homero">
+            </label> 
             
+            <label> 
+                <input type="radio" name="test" value="Marge" id="avatar">
+                <img src="imagenes/marge.png" title="Marge">
+
+            </label> 
+            <label> 
+                    <input type="radio" name="test" value="Bart" id="avatar">
+                <img src="imagenes/bart.png" title="Bart">
+            </label>   
+            <label> 
+                    <input type="radio" name="test" value="Lisa" id="avatar">
+                    <img src="imagenes/lisa.png" title="Lisa">
+            </label>
+            <label>
+                    <input type="radio" name="test" value="Maggie" id="avatar">
+                    <img src="imagenes/maggie.png" title="Maggie">
+            </label>
+        </div>
+    
         </fieldset>
-        <button class="boton" type="submit">Aceptar</button>
+            <button class="boton" type="submit">INICIO</button>
     </form>
 
      
 
-    <audio id="saludo" src="sonidos/Saludo.wav" preload="auto"></audio>
+    <audio id="saludo" src="./sonidos/Saludo.wav"  autoplay="true" preload="auto"></audio>
+
+
+
+
+    <script src="./js/indexFront.js"></script>
+
+   
+
 </body>
 
 </html>

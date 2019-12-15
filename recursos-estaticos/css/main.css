@@ -56,9 +56,13 @@ body {
 
 }
 
+.contenedorTodo {
+	display: flex;
+    justify-content: center;
+}
+
 #entorno {
 	display: block;
-	margin: auto;
 	box-sizing: border-box;
 	height: auto;
 	
@@ -131,6 +135,8 @@ h1 {
 .botones {
 	text-align:-webkit-center;
 	box-sizing: border-box;
+	padding: 50px;
+	margin-top: 100px;
 }
 
 #boton {
@@ -211,6 +217,7 @@ h1 {
 	height: auto;
 	box-shadow: 0 0 14px 6px black;
 	border-radius: 30px;
+	margin-top: -24px;
 }	
 
 .lata {
@@ -222,14 +229,15 @@ h1 {
 }
 
 .mensaje {
-	background-color: rgba(0, 255, 3, 0.76);
-    margin: 20px;
-	padding: 10px;
-	width: 30%;
-	box-sizing: border-box;
-	box-shadow: 0 0 14px 6px black;
-	text-align: center;
+	
+    background-color: rgba(0, 255, 3, 0.76);
+	margin: 18%;
+    padding: 8px;
+    box-sizing: border-box;
+    box-shadow: 0 0 14px 6px black;
+    text-align: center;
 	border-radius: 30px;
+	display: inline;
 	
 }
 
