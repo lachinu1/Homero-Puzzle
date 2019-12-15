@@ -104,28 +104,12 @@ function testing() {
 	if(bien_ubicada == 9){
 		win.play();
 		clearInterval(cronometro)
-		alert("¡Felicitaciones babos@! Terminaste el juego")
-		//obtener usuario y cronometro
-		//mandar al servidor a traves de un POST 
-		async function guardarTiempos(tiempo, usuarios) {
-			var respuesta = await fetch('/api/puntajes', {
-				method: 'GET',
-				headers: {
-					'Content-Type': 'application/json'
-				},
-				body: JSON.stringify({
-					usuarios: usuarios,
-					tiempo: tiempo,
-				})
-			})
-			var contenido = respuesta.text()
-			alert(contenido)
-			// re direccionar al login o no sé
-			window.location.href = "/juego.html"
+		alert("Felicitaciones babos@! Terminaste el juego")
+		
 		}
 
 	}
-}
+
 
 
 //Animación de la DonaMovil

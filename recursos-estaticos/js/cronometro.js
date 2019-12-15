@@ -43,7 +43,7 @@ function StartTime(){
     
     function showBestTimes() {
         var bestTimes = getBestTimesKeys();
-        var bestTimesList = document.getElementById('puntuaciones');
+        var bestTimesList = document.getElementById('tiempo');
         if (bestTimesList) {
             clearList(bestTimesList);
             for (var i=0; i < bestTimes.length; i++) {

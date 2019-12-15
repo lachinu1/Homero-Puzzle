@@ -4,7 +4,8 @@ var ClienteMongo = require("mongodb").MongoClient;
 
 var url = 'mongodb+srv://chinu:tltar303@cluster0-c3wlg.mongodb.net/test?retryWrites=true&w=majority';  
 
-var nombre_db = 'Chinu';
+
+var nombre_db = "Chinu";
 
 // Variable donde guardamos la conexión a MongoDB Atlas
 var db;
@@ -26,7 +27,7 @@ ClienteMongo.connect(url, { useUnifiedTopology: true }, async function(
   /* Si la conexión se estableció hace console.log y la guarda
   en la variable "db" para que la podamos usar después.
   */
-  console.log("Conexión a Mongo exitosa!");
+  console.log("Conexión con Mongo exitosa!");
   db = cliente.db(nombre_db);
 });
 
@@ -39,17 +40,17 @@ app.use(express.static("./recursos-estaticos"));
 /* Este endpoint recibe consultas solo con metodo POST, es el que
 vamos a usar para insertar usuarios a MongoDB
 */
-app.post("./juego" , async function(consulta, respuesta) {
+app.post("/juego", async function(consulta, respuesta) {
   await db.collection("usuarios").insertOne({
     nombre: consulta.body.usuario,
     avatar: consulta.body.avatar,
     tiempo: consulta.body.tiempo
   });
 
-  respuesta.send("usuario ingresado");
+  respuesta.send("Usuario ingresado");
 });
 
-app.get("/tabla", async function(consulta, respuesta) {
+app.get("/juego", async function(consulta, respuesta) {
   var usuarios = await db
     .collection("usuarios")
     .find()
@@ -59,5 +60,5 @@ app.get("/tabla", async function(consulta, respuesta) {
 });
 
 app.listen(3000, function() {
-  console.log("Servidor corriendo en puerto 3000");
+  console.log("Servidor corriendo puerto en 3000");
 });

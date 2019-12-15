@@ -4,23 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <link rel="stylesheet" href="estilos.css">
-
-
+    <link rel="stylesheet" href="./css/estilosLogin.css">
+   
 <body> 
+    
     <h1>Homero Puzzle</h1>
 
     <form 
-    action="./juego.html" 
-    method="GET" 
+    action="/juego.html" 
+    method="get" 
     enctype="multipart/form-data" 
     class="form"
     id= "formulario"
 >
 
         <fieldset class="usuario">
-            <label for="nombre">Ingresa un nombre de usuario</label>
-            <input name="nombre" id="nombre" required>
+            <label for="nombre">Ingresa un nombre</label>
+            <input type="text" name="usuario" placeholder="Usuario" id="nombre" required>
         </fieldset>
 
         <fieldset class="img">
@@ -29,25 +29,25 @@
         <div class="galeria">
               
             <label>  
-                <input type="radio" name="test" value="Homero" id="avatar" checked>
+                <input type="radio" name="avatar" value="Homero" placeholder="Avatar" id="Homero" checked>
                 <img src="imagenes/homero2.png" title="Homero">
             </label> 
             
             <label> 
-                <input type="radio" name="test" value="Marge" id="avatar">
+                <input type="radio" name="avatar" value="Marge" id="Marge">
                 <img src="imagenes/marge.png" title="Marge">
 
             </label> 
             <label> 
-                    <input type="radio" name="test" value="Bart" id="avatar">
+                    <input type="radio" name="avatar" value="Bart" id="Bart">
                 <img src="imagenes/bart.png" title="Bart">
             </label>   
             <label> 
-                    <input type="radio" name="test" value="Lisa" id="avatar">
+                    <input type="radio" name="avatar" value="Lisa" id="Lisa">
                     <img src="imagenes/lisa.png" title="Lisa">
             </label>
             <label>
-                    <input type="radio" name="test" value="Maggie" id="avatar">
+                    <input type="radio" name="avatar" value="Maggie" id="Maggie">
                     <img src="imagenes/maggie.png" title="Maggie">
             </label>
         </div>
@@ -58,14 +58,8 @@
 
      
 
-    <audio id="saludo" src="./sonidos/Saludo.wav"  autoplay="true" preload="auto"></audio>
+    <audio id="saludo" src="sonidos/Saludo.wav"  autoplay="true" preload="auto"></audio>
 
-
-
-
-    <script src="./js/indexFront.js"></script>
-
-   
 
 </body>
 
