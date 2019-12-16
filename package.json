@@ -1,6 +1,5 @@
 {
   "name": "homero-puzzle",
-  "version": "1.0.0",
   "description": "juego para la web",
   "main": "index.js",
   "dependencies": {
@@ -8,13 +7,10 @@
     "mongodb": "^3.4.0",
     "multer": "^1.4.2"
   },
-  "scripts":{
+  "scripts": {
     "start": "node index.js"
   },
   "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lachinu1/Homero-Puzzle.git"
@@ -24,5 +20,6 @@
   "bugs": {
     "url": "https://github.com/lachinu1/Homero-Puzzle/issues"
   },
-  "homepage": "https://github.com/lachinu1/Homero-Puzzle#readme"
+  "homepage": "https://github.com/lachinu1/Homero-Puzzle#readme",
+  "keywords": []
 }
