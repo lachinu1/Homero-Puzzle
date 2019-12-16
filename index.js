@@ -2,6 +2,8 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var ClienteMongo = require("mongodb").MongoClient;
 
+var puerto = process.env.PORT || 3000
+
 var url = 'mongodb+srv://chinu:tltar303@cluster0-c3wlg.mongodb.net/test?retryWrites=true&w=majority';  
 
 
@@ -59,6 +61,6 @@ app.get("/tabla", async function(consulta, respuesta) {
   respuesta.send(usuarios);
 });
 
-app.listen(3000, function() {
-  console.log("Servidor corriendo en puerto 3000");
+app.listen(puerto, function() {
+  console.log("Servidor corriendo en " + puerto);
 });
