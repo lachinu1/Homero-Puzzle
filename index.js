@@ -47,7 +47,7 @@ app.post("/juego", async function(consulta, respuesta) {
     tiempo: consulta.body.tiempo
   });
 
-  respuesta.send("usuario insertado");
+  respuesta.send("Gracias por enviar tu resultdo! Hasta pronto!");
 });
 
 app.get("/tabla", async function(consulta, respuesta) {

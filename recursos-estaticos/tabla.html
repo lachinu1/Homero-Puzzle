@@ -4,21 +4,39 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./css/estilosTabla.css">
     <title>Document</title>
   </head>
   <body>
-    <h1>Jugadores</h1>
 
-    <table>
+    
+    <h1>Resultados</h1>
+
+    <div class="subtitulo">
+      <h2>Jugadores</h2>
+    </div>
+
+    <div class="resultados"> 
+        <button class="boton" onclick="conseguirUsuarios()">Ver resultados</button>
+    </div>
+
+    
+    <table class="tabla">
       <thead>
-        <th>Nombre de Usuario</th>
-        <th>Avatar</th>
-        <th>Tiempo de Juego</th>
+        <td>Usuario</td>
+        <br>
+        <td>Avatar</td>
+        <br>
+        <td>Tiempo</td>
       </thead>
       <tbody></tbody>
     </table>
 
-    <button onclick="conseguirUsuarios()">Ver resultados</button>
+    <div class="documento" > 
+        <div class="scrollbar" id="style-3">
+            <div class="force-overflow"></div>
+    </div>
+  
   </body>
   
   <script>
@@ -31,14 +49,15 @@
       usuarios.forEach(function(usuario) {
         var tr = document.createElement("tr");
         var usuario_td = document.createElement("td");
+        var avatar_td = document.createElement("td");
         var tiempo_td = document.createElement("td");
 
         usuario_td.textContent = usuario.nombre;
-        avatar_tb.textContent = usuario.avatar;
+        avatar_td.textContent = usuario.avatar;
         tiempo_td.textContent = usuario.tiempo;
 
         tr.appendChild(usuario_td);
-        tr.appendChild(avatar_tb);
+        tr.appendChild(avatar_td);
         tr.appendChild(tiempo_td);
 
         tbody.appendChild(tr);

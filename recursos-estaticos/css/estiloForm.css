@@ -268,8 +268,7 @@ fieldset {
  .reloj {
     font-size: larger;
     text-align: center;
-    font-family: "Simpsonfont";
-    src: url("./fonts/Simpsonfont.otf");
+    font-family: cursive;
  }
 
  .resultados {
