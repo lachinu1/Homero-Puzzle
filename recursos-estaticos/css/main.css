@@ -251,3 +251,17 @@ h1 {
 	}
 
 }
+
+.resultados {
+	background-color: rgba(0, 255, 3, 0.76);
+	margin: 4%;
+    padding: 8px;
+    box-sizing: border-box;
+    box-shadow: 0 0 14px 6px black;
+    text-align: center;
+	border-radius: 30px;
+	display: flex;
+	justify-content: center;
+    width: fit-content;
+    margin-top: -21px;
+}

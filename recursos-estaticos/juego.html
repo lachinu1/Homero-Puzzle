@@ -37,7 +37,7 @@
         
 
         <form class="botones"> 
-            <input type="button" id="boton" onclick="StartTime()" value="Start" >
+            <input type="button" id="boton" onclick="StartTime();" value="Start" >
 
          <div id="cronometro">
                 <p id="texto">Tiempo</p>
@@ -61,6 +61,10 @@
 
     </div>
 
+        <div class="resultados">
+            <a href="form.html"> Ingresa tu resultado </a>
+        </div>
+
         <div class="donaMovil" >
             <img id="donaMovil" class="estiloDona" src="imagenes/dona.png" weight="200" height="200"> 
         </div>
@@ -79,7 +83,7 @@
 
         <audio id="win" src="sonidos/Homero.mp3"></audio>
 
-        
+        <audio id="sonido" src="sonidos/Click.wav"></audio>
 
     
         <script type="text/javascript" src="js/main.js" ></script>
@@ -102,6 +106,12 @@
                     document.attachEvent('onmousemove', mouseMovido);
                 }                  
         
+        </script>
+
+        <script> 
+           
+            var sonido = document.getElementById('sonido');
+            
         </script>
 
 

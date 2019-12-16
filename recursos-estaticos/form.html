@@ -4,16 +4,77 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Usuarios</title>
+    
+    <link rel="stylesheet" href="./css/estiloForm.css">
+
+    <title>Resultados</title>
   </head>
+
   <body>
-    <a href="/tabla.html">Ver Tabla</a>
-    <h1>Usuario</h1>
-    <form action="/juego" method="post">
-      <input type="text" name="usuario" placeholder="Usuario" />
-      <input
-      <input type="number" name="tiempo" placeholder="Tiempo" />
-      <button>Enviar</button>
+
+    <h1>Resultados</h1>
+
+    <form 
+    action="/juego"
+    method="post"
+    >
+    
+
+    <fieldset class="usuario">
+        <label for="nombre">Ingresa un nombre</label>
+        <input type="text" name="usuario" placeholder="Usuario" required>
+    </fieldset> 
+
+      <fieldset class="img">
+          <label for="avatar">Selecciona tu Avatar</label>
+
+      <div class="galeria">  
+
+      <label>
+          <input type="radio" name="avatar" value="Homero" id="Homero" checked>
+          <img src="imagenes/homero2.png" title="Homero">
+      </label>
+       
+      <label> 
+          <input type="radio" name="avatar" value="Marge" id="Marge">
+          <img src="imagenes/marge.png" title="Marge">  
+      </label>
+      
+      <label> 
+          <input type="radio" name="avatar" value="Bart" id="Bart">
+          <img src="imagenes/bart.png" title="Bart">
+      </label>   
+
+      <label> 
+          <input type="radio" name="avatar" value="Lisa" id="Lisa">
+          <img src="imagenes/lisa.png" title="Lisa">
+      </label>
+
+      <label>
+          <input type="radio" name="avatar" value="Maggie" id="Maggie">
+          <img src="imagenes/maggie.png" title="Maggie">
+      </label>
+
+      </fieldset>
+
+      <fieldset class="time"> 
+
+      <label for="time">Tiempo de Juego</label>
+          <input class="reloj" type="time" name="tiempo"> 
+
+      </fieldset>
+
+      <div class="resultados"> 
+          <a class="boton" href="/tabla.html">Ver Resultados</a>
+          <button class="boton" type="submit"> Enviar Mi Resultado </button> 
+      </div>
+
+    </div>
+
+      
+
     </form>
+
   </body>
+
 </html>

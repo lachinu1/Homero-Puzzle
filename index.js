@@ -47,10 +47,10 @@ app.post("/juego", async function(consulta, respuesta) {
     tiempo: consulta.body.tiempo
   });
 
-  respuesta.send("Usuario ingresado");
+  respuesta.send("usuario insertado");
 });
 
-app.get("/juego", async function(consulta, respuesta) {
+app.get("/tabla", async function(consulta, respuesta) {
   var usuarios = await db
     .collection("usuarios")
     .find()
@@ -60,5 +60,5 @@ app.get("/juego", async function(consulta, respuesta) {
 });
 
 app.listen(3000, function() {
-  console.log("Servidor corriendo puerto en 3000");
+  console.log("Servidor corriendo en puerto 3000");
 });
