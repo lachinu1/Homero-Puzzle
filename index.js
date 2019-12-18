@@ -4,7 +4,7 @@ var ClienteMongo = require("mongodb").MongoClient;
 
 var puerto = process.env.PORT || 3000
 
-var url = 'mongodb+srv://chinu:tltar303@cluster0-c3wlg.mongodb.net/test?retryWrites=true&w=majority';  
+var url = 'mongodb+srv://chinu:tltar303@cluster0-c3wlg.azure.mongodb.net/test?retryWrites=true&w=majority';  
 
 
 var nombre_db = "Chinu";
